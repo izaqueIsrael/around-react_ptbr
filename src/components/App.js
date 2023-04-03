@@ -30,10 +30,7 @@ function App() {
 
   // Image Modal
   const [imageModalIsOpen, setImageModalIsOpen] = useState(false);
-  const handleCardClick = (e) => {
-    setImageModalIsOpen(!imageModalIsOpen);
-    setSelectedCard({ link: e.target.src, text: e.target.nextElementSibling.nextElementSibling.firstElementChild.textContent });
-  }
+  const handleCardClick = (e) => (setImageModalIsOpen(!imageModalIsOpen), setSelectedCard({ link: e.target.src, text: e.target.nextElementSibling.nextElementSibling.firstElementChild.textContent }));
 
   return (
     <>

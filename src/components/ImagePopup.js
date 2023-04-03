@@ -5,14 +5,9 @@ function ImagePopup({ className, imageModalIsOpen, setImageModalIsOpen, selected
   const handleCloseImageCard = () => setImageModalIsOpen(!imageModalIsOpen);
   const handleFadeClick = () => setImageModalIsOpen(!imageModalIsOpen);
   const handleModalOnKeyDown = e => e.key === 'Escape' ? setImageModalIsOpen(false) : null;
-
   const buttonRef = useRef();
   const imageRef = useRef();
-
-  const adjustImageWidth = () => {
-    const imageWidth = imageRef.current.clientWidth;
-    buttonRef.current.style.width = `${imageWidth + 80}px`;
-  }
+  const adjustImageWidth = () => buttonRef.current.style.width = `${imageRef.current.clientWidth + 80}px`;
 
   return (
     <>
