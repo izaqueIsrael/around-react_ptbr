@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
 import Main from './Main';
 import EditModal from './EditModal';
 import AddPostModal from './AddPostModal';
 import ChangeAvatarModal from './ChangeAvatarModal';
 import DeletePostModal from './DeletePostModal';
-import ImageModal from './ImageModal';
+import ImagePopup from './ImagePopup';
 import Footer from './Footer';
 
 function App() {
@@ -60,7 +60,7 @@ function App() {
         avatarModalIsOpen={avatarModalIsOpen}
         onEditAvatarClick={setAvatarModalIsOpen}
       />
-      <ImageModal
+      <ImagePopup
         className={`${imageModalIsOpen ? 'popup popup-image' : 'popup popup_closed popup-image'}`}
         imageModalIsOpen={imageModalIsOpen}
         setImageModalIsOpen={setImageModalIsOpen}

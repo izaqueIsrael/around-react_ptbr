@@ -15,12 +15,10 @@ export default class Api {
   }
 
   _checkTheApiResponse(res) {
-    {
-      if (!res.ok) {
-        return Promise.reject(`${res.status} error!`);
-      }
-      return res.json();
+    if (!res.ok) {
+      return Promise.reject(`${res.status} error!`);
     }
+    return res.json();
   }
 
   setUserInfo({ newName, newAbout }) {

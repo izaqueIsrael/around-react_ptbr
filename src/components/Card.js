@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import trashIcon from '../images/trash.svg'
-import ImageModal from './ImageModal';
 
 function Card({ image, title, likes, handleCardClick, handleDeleteCardClick }) {
   const handleClick = (e) => handleCardClick(e);
 
   return (
     <div className="post">
-      <img className="post__image" src={image} onClick={handleClick} />
+      <img className="post__image" alt={title} src={image} onClick={handleClick} />
       <button className="button post__delete"><img className="post__delete__image" alt="delete post" src={trashIcon} onClick={handleDeleteCardClick} /></button>
       <div className="post__container">
         <h2 className="title post__title">{title}</h2>
