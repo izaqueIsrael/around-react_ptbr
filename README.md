@@ -12,7 +12,7 @@
 
 ### Github Pages
 
-* [Link para o projeto no Github Pages](https://izaqueisrael.github.io/web_project_4_ptbr/)
+* [Link para o projeto no Github Pages](https://izaqueisrael.github.io/around-react_ptbr/)
 
 ### Figma
 
