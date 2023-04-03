@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import PopupWithForm from './PopupWithForm';
 
 function AddPostModal({ className, addIsOpen, setAddIsOpen }) {
@@ -12,14 +12,14 @@ function AddPostModal({ className, addIsOpen, setAddIsOpen }) {
       children={
         <>
           <div>
-            <input name="formTitle" className="form__input form__input_add form__title" id="title" type="text"
-              placeholder="Ti&#769;tulo" />
-            <label htmlFor="title" className="form__description form__description_error"></label>
+            <input name='formTitle' className='form__input form__input_add form__title' id='title' type='text'
+              placeholder='Ti&#769;tulo' />
+            <label htmlFor='title' className='form__description form__description_error'></label>
           </div>
           <div>
-            <input name="formLink" className="form__input form__input_add form__link" id="link" type="text"
-              placeholder="Link de imagem" />
-            <label htmlFor="link" className="form__description form__description_error"></label>
+            <input name='formLink' className='form__input form__input_add form__link' id='link' type='text'
+              placeholder='Link de imagem' />
+            <label htmlFor='link' className='form__description form__description_error'></label>
           </div>
         </>
       }

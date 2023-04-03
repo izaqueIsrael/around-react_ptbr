@@ -1,5 +1,5 @@
-import React from "react";
-import PopupWithForm from "./PopupWithForm";
+import React from 'react';
+import PopupWithForm from './PopupWithForm';
 
 function ChangeAvatarModal({ className, avatarModalIsOpen, onEditAvatarClick }) {
   const handleAvatarModalCloseModalClick = () => onEditAvatarClick(!avatarModalIsOpen);
@@ -12,15 +12,15 @@ function ChangeAvatarModal({ className, avatarModalIsOpen, onEditAvatarClick }) 
       children={
         <div>
           <input
-            className="form__input form__avatar"
-            name="formImage"
-            id="avatar"
-            type="text"
-            placeholder=""
+            className='form__input form__avatar'
+            name='formImage'
+            id='avatar'
+            type='text'
+            placeholder=''
           />
           <label
-            htmlFor="avatar"
-            className="form__description form__description_error"
+            htmlFor='avatar'
+            className='form__description form__description_error'
           />
         </div>
       }
