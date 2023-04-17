@@ -1,4 +1,4 @@
-import { apiUser } from '../utils/constants.js';
+import { apiUser } from './constants.js';
 export default class Api {
   constructor({ token, link }) {
     this.token = token;
@@ -6,7 +6,16 @@ export default class Api {
   }
 
   getUserInfo() {
-    return fetch(this.link, {
+    return fetch(`${this.link}/users/me`, {
+      headers: {
+        authorization: this.token
+      }
+    })
+      .then(res => res.json());
+  }
+
+  getUserCards() {
+    return fetch(`${this.link}/cards`, {
       headers: {
         authorization: this.token
       }
@@ -58,7 +67,7 @@ export default class Api {
   }
 
   deleteCard(cardId) {
-    return fetch(`${this.link}/${cardId}`, {
+    return fetch(`${this.link}/cards/${cardId}`, {
       method: 'DELETE',
       headers: {
         authorization: this.token
@@ -67,22 +76,22 @@ export default class Api {
       .then((res) => this._checkTheApiResponse(res));
   }
 
-  addLike(cardId, token) {
-    return fetch(`${this.link}/likes/${cardId}`, {
+  addLike(cardId) {
+    return fetch(`${this.link}/cards/likes/${cardId}`, {
       method: 'PUT',
       headers: {
-        authorization: token,
+        authorization: this.token,
         'Content-Type': 'application/json'
       },
     })
       .then((res) => this._checkTheApiResponse(res));
   }
 
-  removeLike(cardId, token) {
-    return fetch(`${this.link}/likes/${cardId}`, {
+  removeLike(cardId) {
+    return fetch(`${this.link}/cards/likes/${cardId}`, {
       method: 'DELETE',
       headers: {
-        authorization: token,
+        authorization: this.token,
         'Content-Type': 'application/json'
       },
     })

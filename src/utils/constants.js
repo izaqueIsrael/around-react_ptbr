@@ -8,7 +8,7 @@ import logo from '../images/logo.svg';
 import trashIcon from '../images/trash.svg';
 import likeButtonActived from '../images/union.png';
 import pen from '../images/pen.svg'
-import Api from './api';
+import Api from './Api';
 
 export { buttonAddIcon, closeIcon, buttonEditIcon, profileImage, likeButton, logo, trashIcon, likeButtonActived, pen };
 
@@ -41,16 +41,5 @@ export const formElementsToBeValidated = {
   inputEqualToOrGreaterThanTwoCharacteres: 2
 };
 
-// imageCard
-export const imageModal = document.querySelector('#image__modal');
-export const fade = document.querySelector('.fade');
-export const modalImage = document.querySelector('#modal__image');
-export const modalDescription = document.querySelector('#modal__description');
-
-// section
-export const posts = '.posts'
-
 // API
-export const cardList = document.querySelector('.posts');
-export const apiUser = new Api({ token: 'fd9c323e-e9d0-40a3-963c-a9bd242da440', link: 'https://around.nomoreparties.co/v1/web_ptbr_cohort_02/users/me' });
-export const apiUserCard = new Api({ token: 'fd9c323e-e9d0-40a3-963c-a9bd242da440', link: 'https://around.nomoreparties.co/v1/web_ptbr_cohort_02/cards' });
+export const apiUser = new Api({ token: 'fd9c323e-e9d0-40a3-963c-a9bd242da440', link: 'https://around.nomoreparties.co/v1/web_ptbr_cohort_02' });
