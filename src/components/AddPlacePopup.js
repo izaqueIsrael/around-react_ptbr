@@ -4,7 +4,7 @@ import PopupWithForm from './PopupWithForm';
 function AddPlacePopup({ className, addIsOpen, setAddIsOpen, handleAddPlaceClick, handleSetCards }) {
   const handleCloseModal = () => handleAddPlaceClick();
   const handleModalOnKeyDown = e => e.key === 'Escape' ? setAddIsOpen(false) : null;
-  console.log('abACATE')
+
   return (
     <PopupWithForm
       formType={'addCard'}

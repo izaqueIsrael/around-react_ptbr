@@ -4,7 +4,7 @@ import PopupWithForm from './PopupWithForm';
 function EditAvatarPopup({ className, avatarModalIsOpen, onEditAvatarClick, handleEditAvatarClick, handleCurrentUser }) {
   const handleCloseModal = () => handleEditAvatarClick();
   const handleModalOnKeyDown = e => e.key === 'Escape' ? onEditAvatarClick(false) : null;
-  console.log('abACATE')
+
   return (
     <PopupWithForm
       formType={'avatar'}

@@ -5,7 +5,6 @@ function useCard() {
   const cardText = useRef();
   const deleteButton = useRef();
   const likeButton = useRef();
-  console.log('abACATE')
   return { cardImage, cardText, deleteButton, likeButton }
 }
 

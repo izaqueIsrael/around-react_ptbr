@@ -4,7 +4,7 @@ import PopupWithForm from './PopupWithForm';
 function EditProfilePopup({ className, editIsOpen, setEditIsOpen, setCurrentUser, handleCurrentUser }) {
   const handleCloseModal = () => setEditIsOpen(!editIsOpen);
   const handleModalOnKeyDown = e => e.key === 'Escape' ? setEditIsOpen(false) : null;
-  console.log('abACATE')
+
   return (
     <PopupWithForm
       formType={'profile'}

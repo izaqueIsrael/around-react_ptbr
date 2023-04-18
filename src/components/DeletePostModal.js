@@ -4,13 +4,7 @@ import PopupWithForm from './PopupWithForm';
 function DeletePostModal({ className, deleteIsOpen, setDeleteIsOpen, currentCard, apiUser, handleSetCards, handleDeleteCardClick }) {
   const handleCloseModal = () => handleDeleteCardClick();
   const handleModalOnKeyDown = e => e.key === 'Escape' ? setDeleteIsOpen(false) : null;
-  // const submitButtonOnClick = async (e) => {
-  //   e.preventDefault();
-  //   await apiUser.deleteCard(currentCard).catch(err => console.log(err));
-  //   await apiUser.getUserCards().then(userCards => handleSetCards(userCards))
-  //   setDeleteIsOpen(!deleteIsOpen);
-  // }
-  console.log('abACATE')
+
   return (
     <PopupWithForm
       formType={'delete'}
