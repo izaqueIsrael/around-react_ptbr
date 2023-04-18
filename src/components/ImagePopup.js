@@ -8,7 +8,7 @@ function ImagePopup({ className, imageModalIsOpen, setImageModalIsOpen, selected
   const buttonRef = useRef();
   const imageRef = useRef();
   const adjustImageWidth = () => buttonRef.current.style.width = `${imageRef.current.clientWidth + 80}px`;
-
+  console.log('abACATE')
   return (
     <>
       <div className={className} id='image__modal' tabIndex={10} onKeyDown={handleModalOnKeyDown}>

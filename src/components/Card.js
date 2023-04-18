@@ -26,7 +26,7 @@ function Card({ card, image, title, likes, handleCardClick, handleDeleteCardClic
   useEffect(() => {
     apiUser.getUserCards().then(userCards => handleSetCards(userCards));
   }, [isLiked]);
-
+  console.log('abACATE')
   const handleDelete = () => (handleDeleteCardClick(), handleDeleteCard(card._id))
   return (
     <div className='post'>

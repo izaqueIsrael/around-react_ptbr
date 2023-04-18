@@ -7,6 +7,7 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function Main({ onEditProfileClick, onAddPlaceClick, onEditAvatarClick, handleCardClick, handleDeleteCardClick, cards, apiUser, setCards, handleDeleteCard, handleSetCards }) {
   const currentUser = useContext(CurrentUserContext);
+  console.log('abACATE')
   return (
     <>
       <main className='main'>

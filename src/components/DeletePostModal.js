@@ -10,7 +10,7 @@ function DeletePostModal({ className, deleteIsOpen, setDeleteIsOpen, currentCard
   //   await apiUser.getUserCards().then(userCards => handleSetCards(userCards))
   //   setDeleteIsOpen(!deleteIsOpen);
   // }
-
+  console.log('abACATE')
   return (
     <PopupWithForm
       formType={'delete'}

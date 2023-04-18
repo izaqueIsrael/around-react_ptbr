@@ -11,7 +11,7 @@ function PopupWithForm({ formType, className, children, title, buttonText, popup
     setSend(!send);
     handleCloseModal();
   }
-
+  console.log('abACATE')
   useEffect(() => {
     if (typeof handleCurrentUser === 'function')
       apiUser.getUserInfo().then(user => handleCurrentUser(user));

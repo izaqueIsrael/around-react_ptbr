@@ -56,7 +56,7 @@ function App() {
 
   // Card
   const [selectedCard, setSelectedCard] = useState({ text: '', link: '' });
-
+  console.log('abACATE')
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <Header />

@@ -1,6 +1,7 @@
 import React from 'react';
 
 function Footer() {
+  console.log('abACATE')
   return (
     <>
       <footer className='footer'>
