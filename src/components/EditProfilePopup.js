@@ -1,13 +1,13 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm';
 
-function EditModal({ className, editIsOpen, setEditIsOpen }) {
-  const handleEditProfileCloseModalClick = () => setEditIsOpen(!editIsOpen);
-  const handleFadeClick = () => setEditIsOpen(!editIsOpen);
+function EditProfilePopup({ className, editIsOpen, setEditIsOpen, setCurrentUser, handleCurrentUser }) {
+  const handleCloseModal = () => setEditIsOpen(!editIsOpen);
   const handleModalOnKeyDown = e => e.key === 'Escape' ? setEditIsOpen(false) : null;
 
   return (
     <PopupWithForm
+      formType={'profile'}
       className={className}
       children={
         <>
@@ -24,11 +24,12 @@ function EditModal({ className, editIsOpen, setEditIsOpen }) {
       title={'Editar Perfil'}
       buttonText={'Salvar'}
       popupIsOpen={editIsOpen}
-      handleFadeClick={handleFadeClick}
-      handleClosePopupClick={handleEditProfileCloseModalClick}
+      handleCloseModal={handleCloseModal}
       handleModalOnKeyDown={handleModalOnKeyDown}
+      setCurrentUser={setCurrentUser}
+      handleCurrentUser={handleCurrentUser}
     />
   );
 }
 
-export default EditModal;
+export default EditProfilePopup;

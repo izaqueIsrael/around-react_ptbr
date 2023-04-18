@@ -31,7 +31,7 @@ export default class Api {
   }
 
   setUserInfo({ newName, newAbout }) {
-    return fetch(this.link, {
+    return fetch(`${this.link}/users/me`, {
       method: 'PATCH',
       headers: {
         authorization: this.token,
@@ -43,7 +43,7 @@ export default class Api {
   }
 
   setUserAvatar(image) {
-    return fetch(`${this.link}/avatar`, {
+    return fetch(`${this.link}/users/me/avatar`, {
       method: 'PATCH',
       headers: {
         authorization: this.token,
@@ -55,7 +55,7 @@ export default class Api {
   }
 
   updateCard({ newName, newLink }) {
-    return fetch(this.link, {
+    return fetch(`${this.link}/cards`, {
       method: 'POST',
       headers: {
         authorization: this.token,

@@ -5,7 +5,7 @@ import Card from './Card';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 
-function Main({ onEditProfileClick, onAddPlaceClick, onEditAvatarClick, handleCardClick, handleDeleteCardClick, cards, apiUser, setCards }) {
+function Main({ onEditProfileClick, onAddPlaceClick, onEditAvatarClick, handleCardClick, handleDeleteCardClick, cards, apiUser, setCards, handleDeleteCard }) {
   const currentUser = useContext(CurrentUserContext);
   return (
     <>
@@ -43,6 +43,7 @@ function Main({ onEditProfileClick, onAddPlaceClick, onEditAvatarClick, handleCa
             like={card.likes}
             apiUser={apiUser}
             setCards={setCards}
+            handleDeleteCard={handleDeleteCard}
           />))}
         </section>
       </main>

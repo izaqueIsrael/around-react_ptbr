@@ -1,13 +1,13 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm';
 
-function ChangeAvatarModal({ className, avatarModalIsOpen, onEditAvatarClick }) {
-  const handleAvatarModalCloseModalClick = () => onEditAvatarClick(!avatarModalIsOpen);
-  const handleFadeClick = () => onEditAvatarClick(!avatarModalIsOpen);
+function EditAvatarPopup({ className, avatarModalIsOpen, onEditAvatarClick, handleEditAvatarClick, handleCurrentUser }) {
+  const handleCloseModal = () => handleEditAvatarClick();
   const handleModalOnKeyDown = e => e.key === 'Escape' ? onEditAvatarClick(false) : null;
 
   return (
     <PopupWithForm
+      formType={'avatar'}
       className={className}
       children={
         <div>
@@ -27,11 +27,11 @@ function ChangeAvatarModal({ className, avatarModalIsOpen, onEditAvatarClick }) 
       title={'Alterar a foto do perfil'}
       buttonText={'Salvar'}
       popupIsOpen={avatarModalIsOpen}
-      handleFadeClick={handleFadeClick}
-      handleClosePopupClick={handleAvatarModalCloseModalClick}
+      handleCloseModal={handleCloseModal}
       handleModalOnKeyDown={handleModalOnKeyDown}
+      handleCurrentUser={handleCurrentUser}
     />
   );
 }
 
-export default ChangeAvatarModal;
+export default EditAvatarPopup;

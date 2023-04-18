@@ -1,13 +1,13 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm';
 
-function AddPostModal({ className, addIsOpen, setAddIsOpen }) {
-  const handleAddPostCloseModalClick = () => setAddIsOpen(!addIsOpen);
-  const handleFadeClick = () => setAddIsOpen(!addIsOpen);
+function AddPlacePopup({ className, addIsOpen, setAddIsOpen, handleAddPlaceClick, handleSetCards }) {
+  const handleCloseModal = () => handleAddPlaceClick();
   const handleModalOnKeyDown = e => e.key === 'Escape' ? setAddIsOpen(false) : null;
 
   return (
     <PopupWithForm
+      formType={'addCard'}
       className={className}
       children={
         <>
@@ -26,11 +26,11 @@ function AddPostModal({ className, addIsOpen, setAddIsOpen }) {
       title={'Novo local'}
       buttonText={'Criar'}
       popupIsOpen={addIsOpen}
-      handleFadeClick={handleFadeClick}
-      handleClosePopupClick={handleAddPostCloseModalClick}
       handleModalOnKeyDown={handleModalOnKeyDown}
+      handleCloseModal={handleCloseModal}
+      handleSetCards={handleSetCards}
     />
   );
 }
 
-export default AddPostModal;
+export default AddPlacePopup;
