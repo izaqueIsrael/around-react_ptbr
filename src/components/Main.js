@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import editButton from '../images/edit.png';
 import addButton from '../images/add.png';
 import Card from './Card';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 
-function Main({ onEditProfileClick, onAddPlaceClick, onEditAvatarClick, handleCardClick, handleDeleteCardClick, cards, apiUser, setCards, handleDeleteCard }) {
+function Main({ onEditProfileClick, onAddPlaceClick, onEditAvatarClick, handleCardClick, handleDeleteCardClick, cards, apiUser, setCards, handleDeleteCard, handleSetCards }) {
   const currentUser = useContext(CurrentUserContext);
   return (
     <>
@@ -44,6 +44,7 @@ function Main({ onEditProfileClick, onAddPlaceClick, onEditAvatarClick, handleCa
             apiUser={apiUser}
             setCards={setCards}
             handleDeleteCard={handleDeleteCard}
+            handleSetCards={handleSetCards}
           />))}
         </section>
       </main>

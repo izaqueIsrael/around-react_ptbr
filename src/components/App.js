@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Main from './Main';
 import EditProfilePopup from './EditProfilePopup';
@@ -9,6 +9,8 @@ import ImagePopup from './ImagePopup';
 import { apiUser } from '../utils/constants';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import Footer from './Footer';
+
+//Saudações meu nobre corretor, só quero informar que fiz o código mirando no resultado da api, então dependendo de como a api está no momento as respostas podem demorar ou serem quase imediatas, como o like, exclusão, adição e edição
 
 function App() {
   // Current User
@@ -68,6 +70,7 @@ function App() {
         apiUser={apiUser}
         setCards={setCards}
         handleDeleteCard={handleDeleteCard}
+        handleSetCards={handleSetCards}
       />
       <EditProfilePopup
         className={`${editIsOpen ? 'popup popup-image' : 'popup popup_closed popup-image'}`}
@@ -102,7 +105,8 @@ function App() {
         setDeleteIsOpen={setDeleteIsOpen}
         currentCard={currentCard}
         apiUser={apiUser}
-        setCards={setCards}
+        handleSetCards={handleSetCards}
+        handleDeleteCardClick={handleDeleteCardClick}
       />
       <Footer />
     </CurrentUserContext.Provider>

@@ -1,25 +1,33 @@
-import React, { useRef } from 'react';
+import React, { useEffect } from 'react';
 import closeButton from '../images/close.png';
 import { apiUser } from '../utils/constants';
+import useForm from '../hooks/UseForm';
 
-function PopupWithForm({ formType, className, children, title, buttonText, popupIsOpen, handleModalOnKeyDown, handleCloseModal, handleCurrentUser, handleSetCards }) {
-  const form = useRef();
-
-  const formSubmit = (e) => {
+function PopupWithForm({ formType, className, children, title, buttonText, popupIsOpen, handleModalOnKeyDown, handleCloseModal, handleCurrentUser, handleSetCards, currentCard }) {
+  const { form, send, setSend } = useForm();
+  const formSubmit = async (e) => {
     e.preventDefault();
-    setInApi(formType);
-    apiUser.getUserInfo().then(user => handleCurrentUser(user));
-    apiUser.getUserCards().then(cards => handleSetCards(cards));
+    await setInApi(formType);
+    setSend(!send);
     handleCloseModal();
   }
 
-  const setInApi = (formType) => {
+  useEffect(() => {
+    if (typeof handleCurrentUser === 'function')
+      apiUser.getUserInfo().then(user => handleCurrentUser(user));
+    if (typeof handleSetCards === 'function')
+      apiUser.getUserCards().then(cards => handleSetCards(cards));
+  }, [send]);
+
+  const setInApi = async (formType) => {
     if (formType === 'avatar')
-      apiUser.setUserAvatar(form.current.elements.avatar.value);
+      await apiUser.setUserAvatar(form.current.elements.avatar.value);
     if (formType === 'profile')
-      apiUser.setUserInfo({ newName: form.current.elements.name.value, newAbout: form.current.elements.status.value });
+      await apiUser.setUserInfo({ newName: form.current.elements.name.value, newAbout: form.current.elements.status.value });
     if (formType === 'addCard')
-      apiUser.updateCard({ newName: form.current.elements.title.value, newLink: form.current.elements.link.value })
+      await apiUser.updateCard({ newName: form.current.elements.title.value, newLink: form.current.elements.link.value });
+    if (formType === 'delete')
+      await apiUser.deleteCard(currentCard);
   }
 
   return (
